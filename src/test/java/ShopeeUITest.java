@@ -72,6 +72,14 @@ public class ShopeeUITest {
         assertEquals(true, categoriesButton.isDisplayed());
     }
 
+    @Test
+    public void testLoginButton() {
+        WebElement loginButton = driver.findElement(By.xpath("//a[contains(text(),'Đăng Nhập')]"));
+        loginButton.click();
+        String expected = "https://shopee.vn/buyer/login?next=https%3A%2F%2Fshopee.vn%2F";
+        String actual = driver.getCurrentUrl();
+        assertEquals(expected, actual);
+    }
 
     @After
     public void tearDown() {
