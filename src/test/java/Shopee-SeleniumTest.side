@@ -1,0 +1,116 @@
+{
+  "id": "5614f412-b2a1-41b3-b530-c8b1c9d24d92",
+  "version": "2.0",
+  "name": "Shopee-SeleniumTest",
+  "url": "https://shopee.vn/",
+  "tests": [{
+    "id": "44311b03-701b-4eaa-8761-8a4fd735f79d",
+    "name": "loginTest",
+    "commands": [{
+      "id": "e27f6ca7-9190-4cdd-8459-9bcfc764e09d",
+      "comment": "",
+      "command": "open",
+      "target": "https://shopee.vn/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "118267e7-5402-4bf4-b911-e20f030a8f87",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x830",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16589cd1-78f4-443b-85e6-a3fc49d880cb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Đăng Nhập",
+      "targets": [
+        ["linkText=Đăng Nhập", "linkText"],
+        ["css=.navbar__link--login", "css:finder"],
+        ["xpath=//a[contains(text(),'Đăng Nhập')]", "xpath:link"],
+        ["xpath=//div[@id='main']/div/header/div/nav/ul/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/buyer/login?next=https%3A%2F%2Fshopee.vn%2F')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Đăng Nhập')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba463c44-9c94-4db7-962f-f55189ae848a",
+      "comment": "",
+      "command": "type",
+      "target": "name=loginKey",
+      "targets": [
+        ["name=loginKey", "name"],
+        ["css=.SdUtrz > .pDzPRp", "css:finder"],
+        ["xpath=//input[@name='loginKey']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/div/div[2]/form/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "ae94a23a-5827-46cb-a6b8-41e5f0f6d4f7",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.SdUtrz > .pDzPRp", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/div/div[2]/form/div/div[2]/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "cdfd7ae2-bbfe-4347-9cfc-fa1cf02620f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.wyhvVD",
+      "targets": [
+        ["css=.wyhvVD", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/div/div[2]/form/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c9d4c8f-1c0b-44c2-b48d-398c6caadd02",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\_8cXplf",
+      "targets": [
+        ["css=.\\_8cXplf", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/div/div[2]/form/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f46d1805-34f9-46ef-863c-086362c12543",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.gCY-Ye",
+      "targets": [
+        ["css=.gCY-Ye", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/div/div[2]/form/div/div[2]/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": "Đăng nhập KHÔNG thành công. Bạn vui lòng thử lại hoặc đăng nhập bằng cách khác nhé!"
+    }, {
+      "id": "35d047f2-2cb9-4734-bba9-128d630ff256",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3a3e6496-2bc6-43b1-8e4e-c6a0e0332bc6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["44311b03-701b-4eaa-8761-8a4fd735f79d"]
+  }],
+  "urls": ["https://shopee.vn/"],
+  "plugins": []
+}

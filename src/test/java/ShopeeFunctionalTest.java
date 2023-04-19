@@ -29,7 +29,7 @@ public class ShopeeFunctionalTest {
 
         System.setProperty("webdriver.chrome.silentOutput", "true");
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("start-maximized");
+        options.addArguments("start-maximized");
 //        options.addArguments("--headless", "--whitelisted-ips=''");
         driver = new ChromeDriver(options);
 
