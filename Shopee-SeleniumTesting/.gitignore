@@ -1,3 +1,5 @@
+src/test/java/accountShopee.txt
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
