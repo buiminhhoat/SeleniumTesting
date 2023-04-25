@@ -1,0 +1,25 @@
+[node]
+override-max-sessions = true
+max-sessions = 5
+detect-drivers = false
+grid-url = "http://192.168.1.88:4444"
+session-timeout = 1800
+
+[[node.driver-configuration]]
+max-sessions = 4
+display-name = "Chrome"
+stereotype = "{\"browserName\": \"chrome\", \"platformName\": \"WIN10\"}"
+
+[[node.driver-configuration]]
+max-sessions = 4
+display-name = "Firefox"
+stereotype = "{\"browserName\": \"firefox\", \"platformName\": \"WIN10\"}"
+
+[[node.driver-configuration]]
+max-sessions = 4
+display-name = "MicrosoftEdge"
+stereotype = "{\"browserName\": \"MicrosoftEdge\", \"platformName\": \"WIN10\"}"
+
+[events]
+publish = "tcp://192.168.1.88:4442"
+subscribe = "tcp://192.168.1.88:4443"

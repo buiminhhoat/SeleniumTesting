@@ -1,0 +1,7 @@
+Hub:
+	java -jar selenium-server-4.8.3.jar hub
+
+Node:
+	java -jar selenium-server-4.8.3.jar node
+	java -jar selenium-server-4.8.3.jar node --detect-drivers true
+	java -jar selenium-server-4.8.3.jar node --hub http://192.168.1.88:4444 --config config.toml
