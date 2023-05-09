@@ -8,9 +8,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,18 +44,17 @@ public class ShopeeFunctionalTestMicrosoftEdge {
         // Navigate to the Shopee homepage
         driver.get("https://shopee.vn/");
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+        wait.until(ExpectedConditions.titleContains("Shopee Việt Nam | Mua và Bán Trên Ứng Dụng Di Động Hoặc Website"));
         Actions actions = new Actions(driver);
         actions.moveByOffset(50, 50).click().perform();
     }
 
     @Test
     public void testSearchbar() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("shopee-searchbar-input__input")));
+
         // Find the search box element by its name attribute
         WebElement searchBox = driver.findElement(By.className("shopee-searchbar-input__input"));
         // Enter a search term into the search box
@@ -65,8 +67,13 @@ public class ShopeeFunctionalTestMicrosoftEdge {
         assertEquals(expected, actual);
     }
 
+
     @Test
     public void testSearchButton() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("shopee-searchbar-input__input")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("btn-solid-primary")));
+
         // Find the search box element by its name attribute
         WebElement searchBox = driver.findElement(By.className("shopee-searchbar-input__input"));
         // Enter a search term into the search box
@@ -74,11 +81,9 @@ public class ShopeeFunctionalTestMicrosoftEdge {
 
         WebElement searchButton = driver.findElement(By.className("btn-solid-primary"));
         searchButton.click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        wait.until(ExpectedConditions.urlToBe("https://shopee.vn/search?keyword=iphone%2014"));
+
         String expected = "https://shopee.vn/search?keyword=iphone%2014";
         String actual = driver.getCurrentUrl();
         assertEquals(expected, actual);

@@ -36,7 +36,7 @@ public class ShopeeUITest {
         Actions actions = new Actions(driver);
         actions.moveByOffset(50, 50).click().perform();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 

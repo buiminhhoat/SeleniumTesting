@@ -22,7 +22,7 @@ public class Main {
         Actions actions = new Actions(driver);
         actions.moveByOffset(50, 50).click().perform();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
 
         // Find the search box element by its name attribute

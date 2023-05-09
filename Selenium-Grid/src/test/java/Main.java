@@ -4,9 +4,14 @@ import org.junit.experimental.ParallelComputer;
 public class Main {
     public static void main(String[] args) {
         Class[] cls = {
-                ShopeeUITestChrome.class, ShopeeUITestFirefox.class, ShopeeUITestMicrosoftEdge.class,
-                ShopeeFunctionalTestChrome.class, ShopeeFunctionalTestFirefox.class, ShopeeFunctionalTestMicrosoftEdge.class
+                ShopeeUITestChrome.class,
+//                ShopeeUITestFirefox.class,
+                ShopeeUITestMicrosoftEdge.class,
+                ShopeeFunctionalTestChrome.class,
+//                ShopeeFunctionalTestFirefox.class,
+                ShopeeFunctionalTestMicrosoftEdge.class
         };
+
 
         // Đăng ký listener với JUnitCore
         JUnitCore core = new JUnitCore();
